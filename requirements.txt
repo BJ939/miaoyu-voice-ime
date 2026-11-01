@@ -1,0 +1,11 @@
+# voice-ime 运行依赖（仅 Windows 10/11 x64）
+# 安装：python -m pip install -r requirements.txt
+#
+# 说明：
+# - tkinter 由官方 Python 安装包自带，无需 pip 安装；
+# - ffmpeg 是系统依赖（非 pip 包）：需在 PATH 中，或在 config.json 的 ffmpeg_path 指定；
+# - 打包 EXE 另需：python -m pip install pyinstaller
+Pillow>=10
+numpy>=1.26
+pynput>=1.7
+sherpa-onnx>=2.0,<3

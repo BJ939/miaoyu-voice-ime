@@ -1,0 +1,61 @@
+voice-ime / 妙语 MiaoYu v0.1.0 — Python 运行时依赖与许可清单
+================================================================
+
+采集时间   : 2026-11-01（Asia/Shanghai）
+采集方式   : 本机 CPython 3.14.3 环境上用 importlib.metadata 实测；
+             打包内版本用 build\dist\MiaoYu\_internal\*.dist-info 交叉核对
+             （numpy-2.4.4.dist-info、sherpa_onnx_core-2.0.0.dist-info、click-8.5.0.dist-info
+              与本机实测版本一致，可认定本机环境即 EXE 构建环境）。
+许可全文   : 见本目录 python\ 子目录（文件名见下表「许可全文」列）。
+
+一、应用直接依赖（requirements.txt）
+----------------------------------------------------------------
+包            版本    许可（实测 License-Expression / License 字段）
+Pillow        12.2.0  MIT-CMU
+numpy         2.4.4   BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0
+pynput        1.8.1   LGPLv3（metadata License="LGPLv3"，Classifier="GNU Lesser General Public License v3 (LGPLv3)"）
+sherpa-onnx   2.0.0   Apache-2.0（metadata License="Apache licensed, as found in the LICENSE file"）
+
+许可全文对应文件：
+- Pillow        -> python\Pillow-12.2.0-MIT-CMU.txt
+- numpy         -> python\numpy-2.4.4-BSD-3-Clause.txt
+- pynput        -> python\pynput-1.8.1-LGPLv3.txt
+- sherpa-onnx   -> python\sherpa-onnx-2.0.0-Apache-2.0.txt
+
+二、随 EXE 一起分发的其他 Python 组件（PyInstaller 收集的传递依赖，实测版本）
+----------------------------------------------------------------
+包                  版本    许可
+psutil              7.2.2   BSD-3-Clause
+pywin32             311     PSF（Python Software Foundation License）
+PyYAML              6.0.3   MIT
+click               8.5.0   BSD-3-Clause
+charset-normalizer  3.4.7   MIT
+
+许可全文对应文件：
+- python\psutil-7.2.2-BSD-3-Clause.txt
+- python\pywin32-311-PSF.txt
+- python\PyYAML-6.0.3-MIT.txt
+- python\click-8.5.0-BSD-3-Clause.txt
+- python\charset-normalizer-3.4.7-MIT.txt
+
+三、语言运行时 / GUI 基础库
+----------------------------------------------------------------
+组件                 版本                     许可             许可全文
+CPython              3.14.3                   PSF-2.0          python\Python-3.14-PSF.txt
+Tcl/Tk               8.6（随 CPython 分发）    Tcl/Tk license    python\Tcl-Tk-license.terms
+                                                     （同时随包存在于 _internal\_tk_data\license.terms）
+
+四、构建工具（不随包分发程序，但其 bootloader 被嵌入 MiaoYu.exe）
+----------------------------------------------------------------
+PyInstaller          6.22.3   GPLv2-or-later + bootloader 特殊例外
+                              （metadata License="GPLv2-or-later with a special exception which
+                                allows to use PyInstaller to build and distribute non-free programs"）
+许可全文：python\PyInstaller-6.22.3-bootloader-GPLv2-with-exception.txt
+说明：该例外条款明确允许用 PyInstaller 打包并分发非自由程序，本项目的 MIT 发布不受其影响。
+
+五、备注
+----------------------------------------------------------------
+- 上述版本均为 2026-11-01 本机实测值；EXE 由 release-dev 重新构建后若升级依赖，
+  应重新核对本清单与 python\ 下许可文件。
+- 许可原文未做任何修改，仅从各发行包（PyPI wheel 的 dist-info/licenses、PyInstaller COPYING）
+  原样复制。

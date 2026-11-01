@@ -1,0 +1,39 @@
+# 注意：部分机器的全局 core.excludesFile 会把 build/ 整个忽略；
+# 这里显式保留 build/ 下的打包脚本与图标（build/dist、build/work 等产物仍在下面被忽略）。
+!build/
+!build/build_exe.ps1
+!build/generate_icon.py
+!build/icon.ico
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# ---- 运行时数据（用户配置 / 日志 / 模型，禁止提交）----
+config.json
+config.json.tmp
+logs/
+backup/
+models/
+
+# ---- 构建产物 ----
+build/dist/
+build/work/
+build/*.spec
+build/icon.png
+Release/
+*.zip
+*.7z
+
+# ---- 测试生成的验收截图（可重新生成，不入库）----
+docs/screenshots/waveform_levels.png
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+.pytest_cache/
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 使用文档 / README
+    url: https://github.com/BJ939/miaoyu-voice-ime#readme
+    about: 安装、模型准备、配置、常见问题先看这里
+  - name: 下载最新版
+    url: https://github.com/BJ939/miaoyu-voice-ime/releases/latest
+    about: 完整包（含模型）开箱即用；精简包不含模型

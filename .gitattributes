@@ -1,0 +1,14 @@
+# 统一文本换行：仓库内文本一律 LF（避免 Windows core.autocrlf=true 造成行尾抖动）
+* text=auto eol=lf
+
+# 二进制文件（不做换行转换）
+*.wav binary
+*.ico binary
+*.png binary
+*.onnx binary
+*.exe binary
+*.dll binary
+*.zip binary
+
+# VBScript(WSH) 只认 CRLF 换行，必须单独指定
+*.vbs text eol=crlf
